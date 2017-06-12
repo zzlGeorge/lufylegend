@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lyfulegend</title>
+    <script src="../js/lib/lufylegend-1.10.1.min.js"></script>
+</head>
+<body>
+<div id="mylegend">loading...</div>
+<!--<img src="../assets/hair.png"/>-->
+
+<script>
+
+    var loader;
+    var field = new LTextField();
+    var i = 0;
+
+    LInit(50, "mylegend", 500, 350, main);
+
+    function main() {
+        var layer = new LSprite();
+        var g = layer.graphics;
+        g.drawRect(10, "#22d", [30, 30, 200, 100], true);
+        layer.addEventListener(LEvent.ENTER_FRAME, fun);
+
+        field.x = 450;
+        field.y = 310;
+
+        addChild(layer);
+        addChild(field);
+    }
+
+    function fun() {
+        field.text = i++;
+    }
+
+</script>
+</body>
+</html>
